@@ -5,6 +5,13 @@ import FoodBox from "./components/FoodBox";
 
 function App() {
   const [foods, setFoods] = useState(foodsJson);
+
+  const deleteFood = (id) => {
+    const newFoods = foods.filter((currentFood) => {
+      return currentFood.id !== id; ///we want to return true for foods to keep in the page
+    });
+    setFoods(newFoods);
+  };
   return (
     <div className="App">
       <h1>LAB | React IronNutrition</h1>
@@ -15,8 +22,10 @@ function App() {
             calories: food.calories,
             image: food.image,
             servings: food.servings,
+            id: food.id,
           }}
-          
+          deleteFunction={deleteFood}
+          key={food.id}
         />
       ))}
     </div>
