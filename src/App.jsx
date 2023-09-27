@@ -8,14 +8,17 @@ function App() {
   return (
     <div className="App">
       <h1>LAB | React IronNutrition</h1>
-      <FoodBox
-        food={{
-          name: "Orange",
-          calories: 85,
-          image: "https://i.imgur.com/abKGOcv.jpg",
-          servings: 1,
-        }}
-      />
+      {foods.map((food) => (
+        <FoodBox
+          food={{
+            name: food.name,
+            calories: food.calories,
+            image: food.image,
+            servings: food.servings,
+          }}
+          
+        />
+      ))}
     </div>
   );
 }

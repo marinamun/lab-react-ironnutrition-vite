@@ -5,7 +5,7 @@ function FoodBox(props) {
     <div>
       <p>{props.food.name}</p>
 
-      <img src={props.food.image} />
+      <img src={props.food.image} style={{ height: "100px" }} />
 
       <p>Calories: {props.food.calories}</p>
       <p>Servings: {props.food.servings}</p>
